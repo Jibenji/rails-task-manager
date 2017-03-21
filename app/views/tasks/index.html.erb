@@ -1,0 +1,19 @@
+<h1>My ToDoList!</h1>
+
+<% @tasks.each do |t| %>
+  <p> Name: <%= t.name %> </p>
+  <p>completed: <%= t.completed %></p>
+  <%= link_to 'display details', task_path(t) %>
+  <%= link_to 'edit', edit_task_path(t) %>
+  <%= link_to "delete", task_path(t),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+  <p>.................</p>
+<% end %>
+<p>*****************</p>
+
+
+<br>
+
+<%= link_to "add a task?", new_task_path  %>
+
